@@ -1,0 +1,217 @@
+@import "src/styles.scss";
+
+.card {
+  .card-header {
+    border-bottom: 0;
+    background-color: #fff;
+
+    h4 {
+      display: inline-block;
+      width: auto;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+    }
+
+    .pool-price {
+      font-size: 30px;
+      font-weight: 700;
+      color: $primary-color;
+      text-align: right;
+      line-height: 1.4;
+      float: right;
+    }
+
+    .pool-address {
+      color: $gray-text;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 15px;
+
+      i {
+        color: $primary-color;
+      }
+    }
+
+    .pool-options {
+      display: inline-block;
+      width: auto;
+
+      i {
+        color: $primary-color;
+      }
+    }
+
+    .booking {
+      font-size: 14px;
+      background: $primary-color;
+      color: #fff;
+      padding: 5px 14px;
+      border-radius: 6px;
+    }
+
+    .pool-favourite {
+      float: right;
+
+      a {
+        color: $yellow-color;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: right;
+      }
+    }
+  }
+
+  .card-body {
+    .pool-width {
+      background-color: $primary-color;
+
+      p {
+        color: #ddd;
+        letter-spacing: 1px;
+        font-size: 14px;
+        position: relative;
+
+        &:first-of-type::after {
+          content: "";
+          width: 1px;
+          height: 50px;
+          background-color: #859dad;
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+.Description {
+  .card-body {
+    p {
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      color: $black-text;
+    }
+
+    .nav-tabs {
+      .nav-link:hover {
+        border-color: transparent;
+      }
+
+      .nav-link.active {
+        border: 0;
+        border-bottom: 3px solid $yellow-color;
+        font-weight: bold;
+      }
+    }
+
+    .tab-pane {
+
+      .guests,
+      .rules {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+
+        li {
+          font-weight: 600;
+          color: #556878;
+          display: block;
+          line-height: 2.4;
+
+          i {
+            color: $primary-color;
+            font-size: 18px;
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.amenities-list {
+  columns: 4;
+  -webkit-columns: 4;
+  -moz-columns: 4;
+
+  li {
+    font-weight: 600;
+    color: #556878;
+    display: block;
+    line-height: 2.4;
+
+    i {
+      background: $primary-color;
+      color: white;
+      width: 22px;
+      height: 22px;
+      font-size: 14px;
+      text-align: center;
+      border-radius: 2px;
+      padding-top: 4px;
+      margin-right: 4px;
+    }
+  }
+}
+
+.agent {
+  .media-body {
+    .agent-details {
+      float: right;
+      background: $primary-color;
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 6px;
+
+      &:hover {
+        text-decoration: none;
+        background-color: #0172bd;
+      }
+    }
+
+    p {
+      font-size: 15px;
+      color: $gray-text;
+      margin-bottom: 10px;
+
+      i {
+        color: $primary-color;
+        font-size: 14px;
+        margin-right: 8px;
+      }
+
+      &:last-of-type {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 12px;
+      }
+    }
+
+    .social-media {
+      a {
+        color: $primary-color;
+        font-size: 18px;
+        display: inline-block;
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+.review {
+  img {
+    border-radius: 50%;
+  }
+
+  .media-body {
+    p {
+      color: $gray-text;
+
+      i {
+        color: $yellow-color;
+      }
+    }
+  }
+}

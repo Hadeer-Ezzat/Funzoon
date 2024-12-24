@@ -1,0 +1,222 @@
+<app-spinner *ngIf='isLoading'></app-spinner>
+
+<div *ngIf='!isLoading'>
+  <!-- Details -->
+  <div class="background-bg">
+    <div *ngIf='pool' class="container pt-5">
+      <div class="card border-0 mb-4">
+        
+        <!-- Pool Properties -->
+        <div class="card-header pt-4 px-4">
+  
+          <!-- Pool Name -->
+          <h4>{{pool.nameEn}}</h4>
+  
+          <!-- Pool Price -->
+          <div class="pool-price">${{pool.chargePrice}}<span class="d-block fs-14">per hour</span></div>
+  
+          <!-- Pool Address -->
+          <p class="pool-address fs-12"><i class="fa fa-map-marker fs-16"></i>{{pool.address}}</p>
+          <div class="clear"></div>
+  
+          <!-- Pool Max Capacity -->
+          <div class="pool-options fs-14">
+            <i class="fa fa-users pr-2 fs-16"></i>
+            <span class="fs-18 font-weight-bold">{{pool.maxCapcity}}</span> max guests
+          </div>
+  
+          <!-- Book Now -->
+          <a href="#" class="booking ml-2">Book Now</a>
+          <div class="pool-favourite">
+            <a href="#"><i class="fa fa-share-alt px-2"></i></a>
+            <a href="#"><i class="fa fa-heart"></i></a>
+          </div>
+          <div class="clear"></div>
+        </div>
+  
+        <div class="card-body p-0">
+  
+          <!-- POOL DIMENSION -->
+          <div class="pool-width py-3">
+            <p class="mb-0 d-inline-block px-4">POOL DIMENSION
+              <span class="d-block text-white fs-18">{{pool.width}} * {{pool.length}} ft</span>
+            </p>
+            <p class="mb-0 d-inline-block px-4">DEPTH OF POOL
+              <span class="d-block text-white fs-18">{{pool.shalloestPoint}} - {{pool.deepestPoint}} ft</span>
+            </p>
+          </div>
+  
+  
+          <div class="pools-views position-relative">
+  
+            <ngx-slick-carousel 
+              class="carousel feedback" 
+              #slickModal="slick-carousel" 
+              [config]="imagesSlider">
+              <div ngxSlickItem *ngFor="let image of pool.poolImgs" class="slide">
+                      <img src="{{ image }}" alt="" width="100%">
+              </div>
+            </ngx-slick-carousel>
+  
+            <!-- <ngx-slick-carousel 
+              class="carousel thumbs" 
+              #slickModal="slick-carousel" 
+              [config]="thumbnailsSlider ">
+              <div ngxSlickItem *ngFor="let image of pool.poolImgs" class="slide">
+                      <img src="{{ image }}" alt="" width="100%">
+              </div>
+            </ngx-slick-carousel> -->
+  
+          </div>
+  
+        </div>
+      </div>
+  
+      <!-- Description -->
+      <div class="card border-0 Description mb-4 p-3">
+        <div class="card-header pb-0">
+          <h4 class="mb-0">
+            <span>Description</span>
+            <img src="assets/images/underline.jpg" alt="" class="d-block mt-2">
+          </h4>
+        </div>
+        <div class="card-body py-0">
+          <p class="fs-14">{{pool.descriptionEn}}</p>
+  
+            <!-- Tabs -->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="guests-tab" data-toggle="tab" href="#guests" role="tab" aria-controls="guests" aria-selected="true">Guests</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="rules-tab" data-toggle="tab" href="#rules" role="tab" aria-controls="rules" aria-selected="false">Rules</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="privacy-tab" data-toggle="tab" href="#privacy" role="tab" aria-controls="privacy" aria-selected="false">Privacy</a>
+              </li>
+            </ul>
+  
+            <div class="tab-content" id="myTabContent">
+  
+              <!-- Pool Guests Policy -->
+              <div class="tab-pane fade show active p-3" id="guests" role="tabpanel" aria-labelledby="guests-tab">
+                <p>
+                  <i class="fa fa-info-circle fs-20"></i>
+                  This pool is pre approved for all reservations with up to 10 guests
+                </p>
+                <ul class="guests list-unstyled">
+                  <li><i class="fa fa-users"></i>Maximum guests <span>{{pool.maxCapcity}}</span></li>
+                  <li *ngIf='pool.isAnAdditionalFee'><i class="fa fa-user-plus"></i><span>$5</span> per guest per hour after {{pool.maxCapcity}} guests</li>
+                  <li *ngIf='pool.areChildrenAllowed'><i class="fa fa-check-circle fs-20"></i>Children allowed</li>
+                  <li *ngIf='pool.areInfantsAllowed'><i class="fa fa-check-circle fs-20"></i>Infants allowed</li>
+                </ul>
+              </div>
+  
+              <!-- Pool Rules -->
+              <div class="tab-pane fade p-3" id="rules" role="tabpanel" aria-labelledby="rules-tab">
+                <h5>Host Rules</h5>
+                <ul class="rules list-unstyled"><li *ngFor='let rule of pool.rules'><i class="fa fa-times-circle"></i>{{rule}}</li></ul>
+  
+                <h5><i class="fa fa-info-circle"></i>Additional Rules</h5>
+                <p>{{pool.additonalRules}}</p>
+              </div>
+  
+              <!-- Pool Privacy -->
+              <div class="tab-pane fade p-3" id="privacy" role="tabpanel" aria-labelledby="privacy-tab">
+                <h5>Privacy</h5>
+                <p>{{pool.privacyDescription}}</p>
+                <h5>RestRoom</h5>
+                <p *ngIf='pool.changingOrRestRoom'>The restroom/change room is located inside the house. You will have
+                  access to the restroom/change room with full privacy and seperate access.
+                </p>
+                <p *ngIf='!pool.changingOrRestRoom'>This pool has no rest room or change room.</p>
+              </div>
+  
+            </div>
+        </div>
+      </div>
+  
+      <!-- Amenities -->
+      <div class="card border-0 mb-4 p-3">
+        <div class="card-header bp-0">
+          <h4 class="mb-0">
+            <span>Amenities</span>
+            <img src="assets/images/underline.jpg" alt="" class="d-block mt-2">
+          </h4>
+        </div>
+        <div class="card-body py-0">
+          <ul class="amenities-list list-unstyled">
+            <li *ngFor='let amenity of pool.amenities'><i class="fa fa-check"></i>{{amenity}}</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Agent -->
+      <div class="card border-0 mb-4 p-3">
+        <div class="card-header bp-0">
+          <h4 class="mb-0">
+            <span>Agent</span>
+            <img src="assets/images/underline.jpg" alt="" class="d-block mt-2">
+          </h4>
+        </div>
+        <div class="card-body py-0">
+          <div class="agent position-relative media">
+            <a href="#" class="agent-img">
+              <img src="{{pool.poolAgent.profileImg}}" class="" alt="" width="150" height="150">
+            </a>
+            <div class="media-body px-3">
+              <h4 class="fs-20 font-weight-bold d-inline-block">{{pool.poolAgent.fullName}}</h4>
+              <!-- <a class="agent-details" href="#">Agent Details</a>
+              <p>
+                <i class="fa fa-envelope"></i>
+                jdoe@homely.com
+              </p>
+              <p>
+                <i class="fa fa-phone"></i>
+                (123) 456-6789
+              </p> -->
+              <p>
+                <i class="fa fa-info-circle fs-18"></i>
+                <span>Always communicate through Funzoon</span>
+                <span class="d-block py-1">To protect your payment, never transfer mony or communicate outside funzoon website or app.</span>
+              </p>
+              <!-- <div class="social-media">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Reviews -->
+      <div class="card border-0 mb-4 p-3">
+        <div class="card-header bp-0">
+          <h4 class="mb-0">
+            <span>Reviews</span>
+            <span> ({{pool.poolReviews.length}})</span>
+            <img src="assets/images/underline.jpg" alt="" class="d-block mt-2">
+          </h4>
+        </div>
+        <div class="card-body py-0">
+  
+          <div *ngFor='let reviewer of pool.poolReviews' class="review media mb-3">
+            <img src="{{reviewer.reviewerProfileImg}}" alt="" width="100" height="100">
+            <div class="media-body px-3">
+              <h5 class="mb-0">{{reviewer.reviewerFullName}}</h5>
+              <p class="mb-0">{{reviewer.datePosted}}</p>
+              <p class="mb-0">
+                <i class="fa fa-star"></i>
+                {{reviewer.rate}}
+              </p>
+              <p>{{reviewer.comment}}
+              </p>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

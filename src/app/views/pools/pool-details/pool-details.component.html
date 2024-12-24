@@ -1,0 +1,79 @@
+<form [formGroup]="formGroup">
+
+  <div class="row mx-0">
+
+    <!-- Pool Details -->
+    <div class="col-12 mb-3">
+      <h4 class="mb-0 wizard-step-title">Pool Details</h4>
+      <img src="assets/images/underline.png" alt="" class="">
+    </div>
+
+    <!-- Pool Address -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <h6>Where is your pool?</h6>
+
+      <div class="form-group">
+        <label for="address" class="fs-14">Enter Address:</label>
+        <input type="text" formControlName='address' class="form-control fs-12" placeholder="e.g 123st." aria-describedby="helpId">
+
+        <!-- Validation -->
+        <app-form-control-error *ngIf="submitted && form.address.errors && form.address.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="fs-14">Special Access Instructions:</label>
+        <textarea class="form-control fs-12" formControlName='specialAccessInstructions' rows="3"></textarea>
+      </div>
+    </div>
+
+    <!-- Name and Description -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <h6>Name and Description.</h6>
+
+      <div class="form-group">
+        <label for="address" class="fs-14">Listing Name:</label>
+        <input type="text" formControlName='name' class="form-control fs-12" placeholder="e.g. Really cool pool" aria-describedby="helpId">
+
+        <!-- Validation -->
+        <app-form-control-error *ngIf="submitted && form.name.errors && form.name.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="fs-14">Describe your pool and swimming area:</label>
+        <textarea class="form-control fs-12" formControlName='description' rows="3"></textarea>
+
+        <!-- Validation -->
+        <app-form-control-error *ngIf="submitted && form.description.errors && form.description.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+      </div>
+    </div>
+
+    <!-- Amentites -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <h6>Does your pool come with any amenities?</h6>
+      <label class="fs-14">Select your pool amenities:</label>
+      <div *ngIf='amenities' class="form-group fs-12">
+        <ng-multiselect-dropdown
+        [placeholder]="'Select'"
+        [settings]="amenitiesDropdownSettings"
+        [formControl] ="form.amenities"
+        [data]="amenities"
+        (onSelect)="onItemSelect($event)"
+        (onDeSelect)="onDeSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+        (onDeSelectAll)="onDeSelectAll($event)">
+        >
+      </ng-multiselect-dropdown>
+
+        <!-- Validation -->
+        <app-form-control-error *ngIf="submitted && form.amenities.errors && form.amenities.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="fs-14">Additional amenities:</label>
+        <textarea class="form-control fs-12" formControlName='additionalAmenities' rows="3"></textarea>
+      </div>
+    </div>
+
+  </div>
+
+</form>

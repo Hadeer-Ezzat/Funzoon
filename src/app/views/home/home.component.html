@@ -1,0 +1,341 @@
+<!-- Slider Section -->
+<section id="slider">
+  <div class="slider-image">
+    <img src="assets/images/slide-1.jpg" alt="">
+    <div class="overlay"></div>
+    <div class="ocean">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+  </div>
+  <div class="content text-center">
+      <div class="wow animate__slideInDown" data-wow-duration="0.5s" data-wow-delay=".05s">
+        <p class="lets-text text-white">
+          LET'S
+        </p>
+          <h3 class="text-white">explore the fun</h3>
+          <p class="looking text-white">What are you looking for?</p>
+      </div>
+        <form class="search-form w-100 pt-3 wow animate__slideInUp" data-wow-duration="0.5s" data-wow-delay=".05s">
+          <div class="form-group d-inline-block w-25 location px-2">
+            <select class="form-control fs-12" name="" id="">
+              <option>Location</option>
+              <option></option>
+              <option></option>
+            </select>
+          </div>
+          <div class="form-group d-inline-block w-25 px-2 type">
+            <select class="form-control fs-12" name="" id="">
+              <option>Type</option>
+              <option></option>
+              <option></option>
+            </select>
+          </div>
+          <div class="form-group d-inline-block">
+            <input type="date" name="" id="" class="form-control fs-12" placeholder="Date" aria-describedby="helpId">
+          </div>
+          <div class="form-group d-inline-block px-2">
+            <input type="time" name="" id="" class="form-control fs-12" placeholder="Time" aria-describedby="helpId">
+          </div>
+          <button type="button" class="btn" (click)='redirectToFindPool()'>
+            <i class="fa fa-search"></i>
+            <span>Search</span>
+          </button>
+        </form>
+    </div>
+</section>
+
+<!-- Popular Spots -->
+<section id="spots">
+  <div class="container">
+    <h4 class="section-title px-4 wow animate__backInDown" data-wow-duration="1s" data-wow-delay=".1s">popular spots</h4>
+    <img src="assets/images/underline.png" alt="" class="px-4">
+  </div>
+  <div class="section-bg mt-3 wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+    <div class="container">
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-2" class="carousel slide carousel-fade spots-carousal" data-ride="carousel">
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="row mx-0 align-items-center">
+            <div class="col-lg-6 col-12 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay=".2s">
+              <h5 class="spot-title font-weight-bold">Blue Water</h5>
+              <p class="mb-0 fs-12 font-italic">Los Angeles, Califronia</p>
+              <span class="fs-12 font-weight-bold">80$ / hour</span>
+              <p class="fs-14 spot-details mt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s,  when an unknown printer took a galley of type and scrambled it to
+                make a type specimen book........</p>
+              <a href="#" class="read-more float-right fs-15">Read More...
+                <i class="fa fa-arrow-right fs-14 align-middle"></i>
+              </a>
+          </div>
+          <div class="col-lg-6 col-12 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay=".2s">
+            <img src="assets/images/blue-water.jpg" class="d-block spot-img" alt="" width="400" height="300">
+          </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row mx-0 align-items-center">
+            <div class="col-lg-6 col-12">
+              <h5 class="spot-title font-weight-bold">Basketball Court</h5>
+              <p class="mb-0 fs-12 font-italic">Los Angeles, Califronia</p>
+              <span class="fs-12 font-weight-bold">100$ / hour</span>
+              <p class="fs-14 spot-details mt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s,  when an unknown printer took a galley of type and scrambled it to
+                make a type specimen book........</p>
+              <a href="#" class="read-more float-right fs-15">Read More...
+                <i class="fa fa-arrow-right fs-14 align-middle"></i>
+              </a>
+          </div>
+          <div class="col-lg-6 col-12">
+            <img src="assets/images/basket.jpg" class="d-block spot-img" alt="" width="400" height="300">
+          </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row mx-0 align-items-center">
+            <div class="col-lg-6 col-12">
+              <h5 class="spot-title font-weight-bold">Tennis Court</h5>
+              <p class="mb-0 fs-12 font-italic">Los Angeles, Califronia</p>
+              <span class="fs-12 font-weight-bold">60$ / hour</span>
+              <p class="fs-14 spot-details mt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s,  when an unknown printer took a galley of type and scrambled it to
+                make a type specimen book........</p>
+              <a href="#" class="read-more float-right fs-15">Read More...
+                <i class="fa fa-arrow-right fs-14 align-middle"></i>
+              </a>
+          </div>
+          <div class="col-lg-6 col-12">
+            <img src="assets/images/tennis.jpg" class="d-block spot-img" alt="" width="400" height="300">
+          </div>
+          </div>
+        </div>
+      </div>
+      <!--/.Slides-->
+    </div>
+    <!--/.Carousel Wrapper-->
+    </div>
+  </div>
+</section>
+
+<!-- How we work Section -->
+<section id="work">
+  <div class="container text-center">
+    <div class="top-block-title pt-4">
+      <i class="fa fa-gear"></i>
+      <h4 class="mt-4 wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">HOW WE WORK</h4>
+    </div>
+    <div class="work-steps d-flex align-items-start">
+      <div class="steps">
+        <div class="line_1"></div>
+        <div class="row mx-0">
+          <div class="offset-lg-2"></div>
+          <div class="col-lg-3 col-12 px-0 text-lg-right step-img wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+            <img src="assets/images/fun.png" alt="" width="200">
+          </div>
+          <div class="col-lg-1 col-12 px-0 icon">
+            <i class="icon-map"></i>
+          </div>
+          <div class="offset-lg-1"></div>
+          <div class="col-lg-4 col-12 text-left mt-lg-5 mt-3 text wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+              <h5>Find Your Place...</h5>
+              <p class="fs-13 step-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </div>
+        </div>
+        <div class="row mx-0">
+          <div class="offset-lg-2"></div>
+            <div class="col-lg-4 col-12 text-left mt-lg-5 mt-3 pr-5 text wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+              <h5>Chat With Host...</h5>
+              <p class="fs-13 step-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            </div>
+            <div class="col-lg-1 col-12 px-0 icon">
+              <i class="icon-chat"></i>
+            </div>
+            <div class="col-lg-3 col-12 text-lg-left step-img wow animate__zanimate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+              <img src="assets/images/chat.png" alt="" width="200">
+            </div>
+        </div>
+        <div class="row mx-0">
+          <div class="offset-lg-2"></div>
+          <div class="col-lg-3 col-12 px-0 text-lg-right step-img wow animate__zanimate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+            <img src="assets/images/drive.png" alt="" width="200">
+          </div>
+          <div class="col-lg-1 col-12 px-0 icon">
+            <i class="icon-right"></i>
+          </div>
+          <div class="offset-lg-1"></div>
+          <div class="col-lg-4 col-12 text-left mt-lg-5 mt-3 text wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+              <h5>Drive Right In...</h5>
+              <p class="fs-13 step-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enjoyment -->
+<section id="enjoy" class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+  <img src="assets/images/enjoy2.png" class="w-100 position-relative" alt="">
+  <div class="enjoy-text wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+    <span class="fs-13 text-white">Never ending enjoyment</span>
+    <h5 class="mt-2">a vaction near your home</h5>
+    <p class="text-white w-75 fs-15">Join thousands of Swimply pool owners earning an effortless income.
+    Cover your operating expenses, cash in on the side, and make other families happy—without
+    compromising your own pool time.
+    Join now and do a victory lap.</p>
+    <button class="btn sign-up"><span>Sign Up</span></button>
+  </div>
+</section>
+
+<!-- Joy Spaces -->
+<section id="joy-spaces" class="wow animate__zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+  <div class="container text-center">
+    <h4 class="section-title px-4">Joy Spaces</h4>
+    <img src="assets/images/underline.png" alt="" class="px-4">
+  </div>
+  <div class="container">
+     <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="basket-tab" data-toggle="tab" href="#basket" role="tab" aria-controls="basket"
+          aria-selected="true">
+          <i class="icon-basketball d-block"></i>
+          Basketball Courts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="tennis-tab" data-toggle="tab" href="#tennis" role="tab" aria-controls="tennis"
+          aria-selected="false">
+          <i class="icon-tennis-court d-block"></i>
+          Tennis Courts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="gym-tab" data-toggle="tab" href="#gym" role="tab" aria-controls="gym"
+          aria-selected="false">
+          <i class="icon-gym d-block"></i>
+          Private Gyms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="tubs-tab" data-toggle="tab" href="#tubs" role="tab" aria-controls="tubs"
+          aria-selected="false">
+          <i class="icon-hot-tub d-block"></i>
+          Hot Tubs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="boats-tab" data-toggle="tab" href="#boats" role="tab" aria-controls="boats"
+          aria-selected="false">
+          <i class="icon-boats d-block"></i>
+          Docked Boats</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="garden-tab" data-toggle="tab" href="#garden" role="tab" aria-controls="garden"
+          aria-selected="false">
+          <i class="icon-backyard d-block"></i>
+          Backyard Garden</a>
+      </li>
+    </ul>
+  </div>
+  <div class="container-fluid px-0">
+    <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="basket" role="tabpanel" aria-labelledby="basket-tab">
+      <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="basketSlider">
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/basketball-slide1.jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/basketball-slide1.jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/basketball-slide1.jpg" alt="">
+          </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="tab-pane fade" id="tennis" role="tabpanel" aria-labelledby="tennis-tab">
+      <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="basketSlider">
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/tennis.jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/tennis.jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/tennis.jpg" alt="">
+          </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="tab-pane fade" id="gym" role="tabpanel" aria-labelledby="gym-tab">
+      <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="basketSlider">
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/gym.jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/gym.jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/gym.jpg" alt="">
+          </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="tab-pane fade" id="tubs" role="tabpanel" aria-labelledby="tubs-tab">
+      <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="basketSlider">
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/hot.jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/hot.jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/hot.jpg" alt="">
+          </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="tab-pane fade" id="boats" role="tabpanel" aria-labelledby="boats-tab">
+      <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="basketSlider">
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/boats (2).jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/boats (2).jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/boats (2).jpg" alt="">
+          </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="tab-pane fade" id="garden" role="tabpanel" aria-labelledby="garden-tab">
+      <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="basketSlider">
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/garden.jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/garden.jpg" alt="">
+          </div>
+          <div ngxSlickItem class="slide">
+            <img src="assets/images/garden.jpg" alt="">
+          </div>
+      </ngx-slick-carousel>
+    </div>
+  </div>
+  </div>
+</section>

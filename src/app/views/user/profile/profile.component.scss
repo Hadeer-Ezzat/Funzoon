@@ -1,0 +1,162 @@
+@import "src/styles.scss";
+
+.profile {
+  .card-header {
+    color: $yellow-color;
+    background: $primary-color;
+    padding: 0px 20px 20px 20px;
+    text-align: center;
+
+    .avatar {
+      display: inline-block;
+      border-radius: 100%;
+      overflow: hidden;
+      border: 5px solid rgba(255, 255, 255, 0.4);
+      width: 90px;
+      height: 90px;
+      margin-top: -30px;
+      margin-bottom: 10px;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.16);
+      transition: all 0.4s;
+    }
+  }
+
+  .card-body {
+    .arrow {
+      margin-top: -22px;
+      position: absolute;
+      margin-left: -45px;
+    }
+
+    .profile-list {
+      position: relative;
+      z-index: 10;
+
+      a {
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 16px 20px 13px 20px;
+        display: block;
+        color: $black-text;
+        background-color: transparent;
+
+        &:hover {
+          background: #deebf2;
+          text-decoration: none;
+        }
+
+        &.active {
+          border-right: 2px solid $primary-color;
+          font-weight: 700;
+          color: $primary-color !important;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.tab-content {
+  form {
+    h5 {
+      color: $black-text;
+      border-bottom: 1px solid #ddd;
+      padding: 0 0 10px;
+
+      i {
+        color: $primary-color;
+      }
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    .form-control {
+      border: 1px solid #ddd;
+      position: relative;
+      font-size: 14px;
+      border-radius: 6px;
+      color: #333;
+
+      &:focus {
+        border-color: $primary-color !important;
+      }
+    }
+
+    .save-btn {
+      background: $primary-color;
+      color: #fff;
+      border: 0;
+      padding: 5px 30px;
+      border-radius: 6px;
+      display: block;
+      margin-left: auto;
+      margin-top: 20px;
+    }
+
+    .payment {
+      border: 1px solid #0589e1;
+      background: #0589e1;
+      color: #fff;
+      border-radius: 6px;
+      padding: 4px 22px;
+    }
+  }
+
+  .notification-form {
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    .toggle-button-switch {
+      position: absolute;
+      top: 2px;
+      left: 6px;
+      width: 18px;
+      height: 18px;
+      background-color: #a7a7a7;
+      border-radius: 100%;
+      cursor: pointer;
+      z-index: 100;
+      transition: left 0.3s;
+    }
+
+    .toggle-button-text {
+      overflow: hidden;
+      background-color: $black-text;
+      border-radius: 25px;
+      box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, 0.75);
+      transition: background-color 0.3s;
+      width: 65px;
+      height: 22px;
+      position: relative;
+      display: block;
+    }
+
+    // .toggle-button-text-on,
+    // .toggle-button-text-off {
+    //   float: left;
+    //   width: 50%;
+    //   height: 100%;
+    //   line-height: 50px;
+    //   font-family: Lato, sans-serif;
+    //   font-weight: bold;
+    //   color: #fff;
+    //   text-align: center;
+    // }
+
+    input[type="checkbox"]:checked~.toggle-button-switch {
+      left: 43px;
+      background-color: #fff;
+    }
+
+    input[type="checkbox"]:checked~.toggle-button-text {
+      background-color: $primary-color;
+    }
+
+    .icon {
+      color: $primary-color;
+    }
+  }
+}

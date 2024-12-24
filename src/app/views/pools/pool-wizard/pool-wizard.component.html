@@ -1,0 +1,63 @@
+<app-spinner *ngIf='isLoading'></app-spinner>
+
+<div *ngIf='!isLoading'>
+  <!-- Wizard -->
+  <div class="container pt-5">
+    <div class="progress md-progress">
+      <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100"></div>
+    </div>
+    <mat-horizontal-stepper [linear]="false" #stepper class="wizard">
+  
+      <!-- Pool Details -->
+      <mat-step label="Details">
+        <app-pool-details [(isSubmitted)]='isSubmitted' (modelEmitter)="this.poolWizard.poolWizardDetails = $event" (formEmitter)="this.poolDetailsFormGroup = $event"></app-pool-details>
+        <button mat-button matStepperNext type="button" class="btn next-btn float-right mt-4">Next<i class="fa fa-angle-right"></i></button>
+      </mat-step>
+  
+      <!-- Pool Specifications -->
+      <mat-step label="Specifications">
+        <app-pool-specifications (modelEmitter)="this.poolWizard.poolWizardSpecifications = $event" (formEmitter)="this.poolSpecificationsFormGroup = $event"></app-pool-specifications>
+        <button mat-button matStepperNext type="button" class="btn next-btn float-right mt-4">Next<i class="fa fa-angle-right"></i></button>
+        <button mat-button matStepperPrevious type="button" class="btn back-btn mr-3 float-right mt-4"> <i class="fa fa-angle-left"></i>Back</button>    
+      </mat-step>
+  
+      <!-- Pool Privacy -->
+      <mat-step label="Privacy">
+        <app-pool-privacy (modelEmitter)="this.poolWizard.poolWizardPrivacy = $event" (formEmitter)="this.poolPrivacyFormGroup = $event"></app-pool-privacy>
+        <button mat-button matStepperNext type="button" class="btn next-btn float-right mt-4">Next<i class="fa fa-angle-right"></i></button>
+        <button mat-button matStepperPrevious type="button" class="btn back-btn mr-3 float-right mt-4"> <i class="fa fa-angle-left"></i>Back</button>    
+      </mat-step>
+  
+      <!-- Attachments -->
+      <mat-step label="Attachments">
+        <app-attachments (modelEmitter)="this.poolWizard.poolWizardAttachment = $event" (formEmitter)="this.poolAttachmentsFormGroup = $event"></app-attachments>
+        <button mat-button matStepperNext type="button" class="btn next-btn float-right mt-4">Next<i class="fa fa-angle-right"></i></button>
+        <button mat-button matStepperPrevious type="button" class="btn back-btn mr-3 float-right mt-4"> <i class="fa fa-angle-left"></i>Back</button>    
+      </mat-step>
+  
+      <!-- Pool Calendar -->
+      <mat-step label="Calender">
+        <!-- <app-calendar-host></app-calendar-host> -->
+        <app-calendar (modelEmitter)="this.poolWizard.poolWizardCalender = $event" (formEmitter)="this.poolCalendarFormGroup = $event"></app-calendar>
+        <button mat-button matStepperNext type="button" class="btn next-btn float-right mt-4">Next<i class="fa fa-angle-right"></i></button>
+        <button mat-button matStepperPrevious type="button" class="btn back-btn mr-3 float-right mt-4"> <i class="fa fa-angle-left"></i>Back</button>    
+      </mat-step>
+  
+      <!-- Pool Payment -->
+      <mat-step label="Payment" state='last'>
+        <app-payment (modelEmitter)="this.poolWizard.poolWizardPayment = $event" (formEmitter)="this.poolPaymentFormGroup = $event"></app-payment>
+        <button type="button" (click)='submit()' class="btn next-btn float-right mt-4">Submit</button>
+        <button mat-button matStepperPrevious type="button" class="btn back-btn mr-3 float-right mt-4"> <i class="fa fa-angle-left"></i>Back</button>    
+      </mat-step>
+  
+    </mat-horizontal-stepper>
+  </div>
+</div>
+
+
+
+
+
+
+

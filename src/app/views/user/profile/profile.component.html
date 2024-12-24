@@ -1,0 +1,37 @@
+<app-spinner *ngIf='isLoading'></app-spinner>
+
+<div *ngIf='!isLoading'>
+  <div class="background-bg pt-3">
+    <div class="container pt-5">
+      <div *ngIf='userProfile' class="row mx-0">
+  
+        <app-user-details-navigation [userProfileInfo]='userProfile.profileInformation' class="col-lg-3 col-md-6 col-12"></app-user-details-navigation>
+  
+        <div class="col-lg-9 col-md-6 col-12">
+          <div class="tab-content" id="v-pills-tabContent">
+  
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <app-user-details-profile [userProfileInfo]='userProfile.profileInformation' (modelEmitter)="this.userProfile.profileInformation = $event" (formEmitter)="this.userDetailsProfile = $event"></app-user-details-profile>
+            </div>
+  
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+              <app-user-details-payments [userPayments]='userProfile.paymentInformation' (modelEmitter)="this.userProfile.paymentInformation = $event" (formEmitter)="this.userDetailsPayments = $event"></app-user-details-payments>
+            </div>
+  
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <app-user-details-favorites  (modelEmitter)="this.userProfile.userFavorites = $event" (formEmitter)="this.userDetailsFavorites = $event"></app-user-details-favorites>
+              <!-- <app-user-details-favorites [userFavorites]='userProfile.userFavorites' (modelEmitter)="this.userProfile.userFavorites = $event" (formEmitter)="this.userDetailsFavorites = $event"></app-user-details-favorites> -->
+            </div>
+  
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              <app-user-details-notifications [userNotifications]='userProfile.notificationSettings' (modelEmitter)="this.userProfile.notificationSettings = $event" (formEmitter)="this.userDetailsNotifications = $event"></app-user-details-notifications>
+            </div>
+  
+          </div>
+        </div>
+        
+        <button class="save-btn" type="submit" (click)='update()'>Update</button>
+      </div>
+    </div>
+  </div>
+</div>

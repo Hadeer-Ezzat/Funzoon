@@ -1,0 +1,46 @@
+@import 'src/styles.scss';
+
+// Pagination
+.page-link {
+  background-color: #fff;
+  border: none;
+  padding: 15px;
+}
+
+.page-item.active {
+  .page-link {
+    background-color: #fff;
+  }
+
+  span {
+    background: $primary-color;
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+}
+
+.page-item:first-child .page-link {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  background: #fff;
+}
+
+.page-item:last-child .page-link {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+@media (max-width: 678px) {
+  .btns {
+    .btn {
+      span {
+        padding: 0 6px !important;
+      }
+
+      i {
+        font-size: 15px !important;
+      }
+    }
+  }
+}

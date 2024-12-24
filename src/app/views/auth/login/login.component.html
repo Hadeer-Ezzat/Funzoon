@@ -1,0 +1,63 @@
+<app-spinner *ngIf='isLoading'></app-spinner>
+
+<div *ngIf='!isLoading' class="login">
+  <!-- Login Page -->
+  <div class="row mx-0">
+    <div class="col-lg-6 col-12 px-0 h-100">
+      <div class="overlay-bg">
+        <img src="assets/images/login-bg.jpg" alt="" class="img-fluid w-100">
+        <div class="content position-absolute">
+          <p class="text-white w-50 welcome-text">WELCOME TO <span class="d-block">FUNZOON</span></p>
+          <p class="fs-18 text-white welcome">Join thousands of Funzoon owners earning an effortless income.
+          Join now and do a victory lap.</p>
+      <div class="register">
+              <button type="button" class="button signup" (click)='redirectToRegister()'>SIGN UP</button>
+      </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-12 d-flex align-items-center h-100">
+      <form class="login-form mx-auto" [formGroup]="loginForm" (ngSubmit)='login()'>
+        <a routerLink="/"><img src="assets/images/funzoon1.png" alt="" class="d-block mx-auto"></a>
+
+        <div class="position-relative form-input my-4">
+          <input type="email" formControlName='userNameOrEmail'
+          class="form-control" aria-describedby="helpId" placeholder="Email / User Name">
+          <label class="input-label mb-0">Email / User Name</label>
+
+          <!-- Validation -->
+          <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('userNameOrEmail')" [errorType]="errorType.RequiredField"></app-form-control-error>
+        </div>
+
+        <div class="position-relative form-input my-3">
+          <!-- <i class="fa fa-lock input-icon"></i> -->
+          <input type="password" formControlName='password'
+            class="form-control" aria-describedby="helpId" placeholder="Password">
+            <label class="input-label mb-0">Password</label>
+            <i class="fa fa-eye password-seen"></i>
+
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('password')" [errorType]="errorType.RequiredField"></app-form-control-error>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="form-check">
+            <label class="form-check-label fs-12">
+              <input type="checkbox" formControlName='keepLoggedIn' class="form-check-input" value="checkedValue" checked>
+              Keep me logged in
+            </label>
+          </div>
+          <a href="#" class="fs-12">Forget Password?</a>
+        </div>
+        <div class="login-btn my-5 text-center">
+          <button type="button" type="submit" class="button button-form">LOGIN</button>
+        </div>
+        <div class="social-media text-center">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

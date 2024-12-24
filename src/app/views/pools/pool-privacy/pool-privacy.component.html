@@ -1,0 +1,68 @@
+<form [formGroup]="formGroup">
+  <div class="row mx-0">
+
+    <div class="col-12 mb-3">
+      <h4 class="mb-0 wizard-step-title">Pool Privacy</h4>
+      <img src="assets/images/underline.png" alt="" class="">
+    </div>
+
+    <!-- Pool's Privacy -->
+    <div class="col-lg-4 col-md-6 col-12 privacy">
+      <h6>How private is your pool and swimming area?</h6>
+      <label class="fs-14">Pool's Privacy:</label>
+
+      <div *ngIf='poolPrivacyLevels'>
+        <div class="form-check mb-3" *ngFor='let pLevel of poolPrivacyLevels; index as i' >
+          <label class="form-check-label fs-13">
+            <input type="radio" class="form-check-input fs-12" formControlName="privacyLevel" [value]="pLevel.id" >
+            {{pLevel.name}}
+          </label>
+          <p class="fs-12 mb-0">{{pLevel.description}}</p>
+        </div>
+      </div>
+
+      <!-- Validation -->
+      <app-form-control-error *ngIf="submitted && form.privacyLevel.errors && form.privacyLevel.errors.required" [errorType]="errorType.MustSelectRadio"></app-form-control-error>
+    </div>
+
+    <!-- Pool Rules -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <h6>Pool Rules</h6>
+      <label class="fs-14">Select any of the following that apply:</label>
+      <div *ngIf='poolRules' class="rules" formArrayName="rules">
+          <div *ngFor='let rule of poolRules; index as i' class="form-check mb-2 w-50 d-inline-block">
+          <label class="form-check-label fs-13">
+            <input type="checkbox" class="form-check-input fs-12" [formControlName]="i" >
+            {{rule.name}}
+          </label>
+        </div>
+      </div>
+      <div class="form-group AdditionalRules mt-3">
+        <label for="" class="fs-14">Additional Rules:</label>
+        <textarea class="form-control fs-12" formControlName='additionalRules' rows="3"></textarea>
+      </div>
+    </div>
+
+    <!-- Cancelation Policy -->
+    <div class="col-lg-4 col-md-6 col-12 privacy">
+      <h6>Cancelation Policy</h6>
+      <label class="fs-14">Choose among the three cancelations policies:</label>
+
+      <div *ngIf='poolCancelationPolicies'>
+        <div class="form-check mb-3" *ngFor='let policy of poolCancelationPolicies; index as i' >
+          <label class="form-check-label fs-13">
+            <input type="radio" class="form-check-input fs-12" formControlName="cancelationPolicy" [value]="policy.id" >
+            {{policy.name}}
+          </label>
+          <p class="fs-12 mb-0">{{policy.description}}</p>
+        </div>
+      </div>
+
+      <!-- Validation -->
+      <app-form-control-error *ngIf="submitted && form.cancelationPolicy.errors && form.cancelationPolicy.errors.required" [errorType]="errorType.MustSelectRadio"></app-form-control-error>
+
+    </div>
+
+  </div>
+
+</form>

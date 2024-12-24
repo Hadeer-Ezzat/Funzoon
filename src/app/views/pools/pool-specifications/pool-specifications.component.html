@@ -1,0 +1,168 @@
+<form [formGroup]="formGroup">
+
+  <div class="row mx-0 specifications">
+    <!-- Pool Specifications -->
+    <div class="col-12 mb-3">
+      <h4 class="mb-0 wizard-step-title">Pool Specifications</h4>
+      <img src="assets/images/underline.png" alt="" class="">
+    </div>
+
+    <!-- Dimensions -->
+    <div class="col-lg-6 col-12">
+      <h6>How big is your pool?</h6>
+      <p class="fs-12">Enter your pool's dimensions and depth in feet</p>
+      <label for="" class="fs-14">Pool Area:</label>
+
+      <!-- Area -->
+      <div class="row mx-0">
+        <div class="form-group col-6 position-relative px-0">
+          <div class="d-flex align-items-center">
+            <div class="position-relative w-50 d-flex align-items-center">
+            <input type="number" formControlName='areaLength' class="form-control fs-12" placeholder="0"
+            aria-describedby="helpId" required>
+            <span class="area fs-12 position-absolute">ft.</span>
+          </div>
+          <span class="ml-2 fs-14 text-muted">Length</span>
+          </div>
+
+          <!-- Validation -->
+          <app-form-control-error *ngIf="submitted && form.areaLength.errors && form.areaLength.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+        </div>
+        <div class="form-group col-6 position-relative px-0">
+          <div class="d-flex align-items-center">
+            <div class="position-relative w-50 d-flex align-items-center">
+            <input type="number" formControlName='areaWidth' class="form-control fs-12" placeholder="0" aria-describedby="helpId">
+            <span class="area position-absolute fs-12">ft.</span>
+          </div>
+          <span class="ml-2 fs-14 text-muted">Width</span>
+          </div>
+
+          <!-- Validation -->
+          <app-form-control-error *ngIf="submitted && form.areaWidth.errors && form.areaWidth.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+        </div>
+      </div>
+
+      <!-- Depth -->
+      <label for="" class="fs-14">Pool Depth:</label>
+      <div class="row mx-0">
+        <div class="form-group col-lg-6 position-relative px-0">
+          <div class="d-flex align-items-center">
+            <div class="position-relative w-50 d-flex align-items-center">
+            <input type="number" formControlName='depthShallowestPoint' class="form-control fs-12" placeholder="0" aria-describedby="helpId">
+            <span class="Depth position-absolute fs-12">ft.</span>
+          </div>
+          <span class="ml-2 fs-14 text-muted">Shallowest point</span>
+          </div>
+
+          <!-- Validation -->
+          <app-form-control-error *ngIf="submitted && form.depthShallowestPoint.errors && form.depthShallowestPoint.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+        </div>
+        <div class="form-group col-lg-6 position-relative px-0">
+          <div class="d-flex align-items-center">
+            <div class="position-relative w-50 d-flex align-items-center">
+            <input type="number" formControlName='depthDeepestPoint' class="form-control fs-12" placeholder="0" aria-describedby="helpId">
+            <span class="Depth position-absolute fs-12">ft.</span>
+          </div>
+          <span class="ml-2 fs-14 text-muted">Deepest point</span>
+          </div>
+
+          <!-- Validation -->
+          <app-form-control-error *ngIf="submitted && form.depthDeepestPoint.errors && form.depthDeepestPoint.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing and Guests -->
+    <div class="col-lg-6 col-12">
+      <h6>Pricing and Guests</h6>
+
+      <!-- Pricing -->
+      <div class="form-group">
+        <label for="" class="fs-14">How much would you like to charge?</label>
+        <select class="form-control fs-12 w-50" formControlName='pricePerHour'  >
+          <option>15</option>
+          <option>40</option>
+          <option>70</option>
+        </select>
+
+        <!-- Validation -->
+        <app-form-control-error *ngIf="submitted && form.pricePerHour.errors && form.pricePerHour.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+      </div>
+
+      <!-- Additional Fees -->
+      <div class="toggle-button">
+        <label class="fs-14">would you like to charge an additional fee for extra guests?</label>
+        <!-- <div class="switch">
+          <input type="radio" name="switch-one" id="guests-yes" value="yes" checked>
+          <label for="guests-yes">Yes</label>
+          <input type="radio" name="switch-one" id="guests-no" value="no">
+          <label for="guests-no">No</label>
+        </div> -->
+        <div class="position-relative">
+            <input type="checkbox" formControlName='isChargableForAdditionalGuests' id="toggle-button-checkbox1">
+            <label class="toggle-button-switch" for="toggle-button-checkbox1"></label>
+            <div class="toggle-button-text">
+              <div class="toggle-button-text-on">Yes</div>
+              <div class="toggle-button-text-off">No</div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Capacity -->
+      <div class="form-group">
+        <label for="" class="fs-14">What is your pool maximum capacity?</label>
+        <select class="form-control fs-12 w-25" formControlName='maxCapacity'  >
+          <option>15</option>
+          <option>20</option>
+          <option>30</option>
+        </select>
+
+        <!-- Validation -->
+        <app-form-control-error *ngIf="submitted && form.maxCapacity.errors && form.maxCapacity.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+      </div>
+
+      <!-- Allowed Options -->
+      <div class="d-lg-flex align-items-center justify-content-between">
+
+        <div class="toggle-button">
+          <label class="fs-14">Are children allowed? ( Age 2 - 12 )</label>
+          <!-- <div class="switch">
+            <input type="radio" id="children-yes" value='yes' checked formControlName='isAllowChildren'>
+            <label for="children-yes">Yes</label>
+            <input type="radio" id="children-no" value='no' formControlName='isAllowChildren'>
+            <label for="children-no">No</label>
+          </div> -->
+          <div class="position-relative">
+            <input type="checkbox" formControlName='isAllowChildren' id="toggle-button-checkbox2">
+            <label class="toggle-button-switch" for="toggle-button-checkbox2"></label>
+            <div class="toggle-button-text">
+              <div class="toggle-button-text-on">Yes</div>
+              <div class="toggle-button-text-off">No</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="toggle-button">
+          <label class="fs-14">Are infants allowed? ( Under 2 )</label>
+          <!-- <div class="switch">
+            <input type="radio" name="switch-three" id="infants-yes" value="yes" checked>
+            <label for="infants-yes">Yes</label>
+            <input type="radio" name="switch-three" id="infants-no" value="no">
+            <label for="infants-no">No</label>
+          </div> -->
+          <div class="position-relative">
+            <input type="checkbox" formControlName='isAllowInfants' id="toggle-button-checkbox3">
+            <label class="toggle-button-switch" for="toggle-button-checkbox3"></label>
+            <div class="toggle-button-text">
+              <div class="toggle-button-text-on">Yes</div>
+              <div class="toggle-button-text-off">No</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</form>

@@ -1,0 +1,128 @@
+<app-spinner *ngIf='isLoading'></app-spinner>
+
+<div *ngIf='!isLoading' class="login">
+  <!-- Register Page -->
+  <div class="row mx-0">
+    <div class="col-lg-6 col-12 px-0 h-100">
+      <div class="overlay-bg">
+        <a routerLink="/"><img src="assets/images/login-bg.jpg" alt="" class="img-fluid w-100"></a>
+        <div class="content position-absolute">
+          <p class="text-white w-50 welcome-text">WELCOME TO <span class="d-block">FUNZOON</span></p>
+          <p class="fs-18 text-white welcome w-75">Join thousands of Funzoon owners earning an effortless income.
+          Join now and do a victory lap.</p>
+          <div class="login-btn">
+          <button type="button" class="button button-form" (click)='redirectToLogin()'>LOGIN</button>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-12 d-flex align-items-center">
+      <form class="login-form mx-auto" [formGroup]="registerForm" (ngSubmit)='register()'>
+        <a routerLink="/"><img src="assets/images/funzoon1.png" alt="" class="d-block mx-auto"></a>
+        <div class="row mx-0 mt-4">
+
+          <div class="form-input col-lg-6 col-12">
+            <input type="text" formControlName='firstName'
+            class="form-control" name="firstName" aria-describedby="helpId" placeholder="First Name">
+            <label class="input-label mb-0">First Name</label>
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('firstName')" [errorType]="errorType.RequiredField"></app-form-control-error>
+          </div>
+
+          <div class="form-input col-lg-6 col-12">
+            <input type="text" formControlName='lastName'
+              class="form-control" name="lastName" aria-describedby="helpId" placeholder="Last Name">
+            <label class="input-label mb-0">Last Name</label>
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('lastName')" [errorType]="errorType.RequiredField"></app-form-control-error>
+          </div>
+
+          <div class="form-input col-lg-6 col-12">
+            <input type="text" formControlName='userName'
+            class="form-control" name="userName" aria-describedby="helpId" placeholder="User Name">
+            <label class="input-label mb-0">User Name</label>
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('userName')" [errorType]="errorType.RequiredField"></app-form-control-error>
+          </div>
+
+          <div class="form-input col-lg-6 col-12">
+            <input type="email" formControlName='email'
+            class="form-control" name="email" aria-describedby="helpId" placeholder="Email">
+            <label class="input-label mb-0">Email</label>
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('email')" [errorType]="errorType.RequiredField"></app-form-control-error>
+            <app-form-control-error *ngIf="formValidator.hasEmailFieldError('email')" [errorType]="errorType.MustBeValidEmail"></app-form-control-error>
+          </div>
+
+          <div class="form-input col-lg-6 col-12">
+            <input type="text" onfocus="(this.type='date')" id="date" formControlName='dateOfBirth'
+              class="form-control" name="dateOfBirth" aria-describedby="helpId" placeholder="Date Of Birth">
+            <label class="input-label mb-0">Date Of Birth</label>
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('dateOfBirth')" [errorType]="errorType.RequiredField"></app-form-control-error>
+          </div>
+
+          <!-- <div class="col-12">
+            <p class="fs-14">You must be at least 18 years old to reserve a pool on Funzoon</p>
+          </div> -->
+
+          <div class="form-input col-lg-6 col-12">
+            <input type="text" formControlName='phoneNumber'
+            class="form-control" name="phoneNumber" aria-describedby="helpId" placeholder="Phone Number">
+            <label class="input-label mb-0">Phone Number</label>
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('phoneNumber')" [errorType]="errorType.RequiredField"></app-form-control-error>
+          </div>
+
+          <div class="form-input col-lg-6 col-12">
+            <input type="text" formControlName='zipCode'
+              class="form-control" name="zipCode" aria-describedby="helpId" placeholder="Zip Code">
+            <label class="input-label mb-0">Zip Code</label>
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('zipCode')" [errorType]="errorType.RequiredField"></app-form-control-error>
+          </div>
+
+          <div class="form-input col-lg-6 col-12">
+            <input type="password" formControlName='password'
+            class="form-control" name="password" aria-describedby="helpId" placeholder="Password">
+            <label class="input-label mb-0">Password</label>
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('password')" [errorType]="errorType.RequiredField"></app-form-control-error>
+            <app-form-control-error *ngIf="formValidator.hasStrongPasswordFieldError('password')" [errorType]="errorType.MustBeStrongPassword"></app-form-control-error>
+          </div>
+
+          <div class="form-input col-lg-6 col-12">
+            <input type="password" formControlName='confirmPassword'
+              class="form-control" name="confirmPassword" aria-describedby="helpId" placeholder="Confirm Password" >
+            <label class="input-label mb-0">Confirm Password</label>
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('confirmPassword')" [errorType]="errorType.RequiredField"></app-form-control-error>
+            <app-form-control-error *ngIf="formValidator.hasMustMatchFieldError('confirmPassword')" [errorType]="errorType.PasswordsShouldMatch"></app-form-control-error>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <label class="form-check-label fs-13">
+                <input type="checkbox"  formControlName='acceptTerms' class="form-check-input fs-14" name="" value="checkedValue">
+                I agree to <a href="#">Funzoon Terms & Conditions.</a>
+              </label>
+            </div>
+
+            <!-- Validation -->
+            <app-form-control-error *ngIf="formValidator.hasRequiredFieldError('acceptTerms')" [errorType]="errorType.RequiredField"></app-form-control-error>
+          </div>
+
+        </div>
+          <div class="register py-4 text-center">
+          <button type="button" type="submit" class="button signup">SIGN UP</button>
+          </div>
+        <div class="social-media text-center">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

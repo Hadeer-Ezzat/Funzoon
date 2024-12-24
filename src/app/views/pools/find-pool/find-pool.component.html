@@ -1,0 +1,30 @@
+<app-spinner *ngIf='isLoading'></app-spinner>
+
+<div *ngIf='!isLoading'>
+  <!-- Find pool -->
+  <div class="container" *ngIf='hasPools()'>
+    <app-find-pools></app-find-pools>
+
+    <!-- Pool Cards -->
+    <div *ngFor="let pool of pageData.data | paginate: { id: 'server', itemsPerPage: pageData.pageSize, currentPage: pageData.pageNumber, totalItems: pageData.totalRecords }">
+      <app-find-pool-list-card [pool]='pool'></app-find-pool-list-card>
+    </div>
+      
+    <!-- Pagination -->
+    <pagination-controls (pageChange)="loadPagePools($event)" id="server"></pagination-controls>
+  </div>
+
+  <!-- When no pools added -->
+  <div class="container" *ngIf='!hasPools()'>
+    <app-empty-search-pools></app-empty-search-pools>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

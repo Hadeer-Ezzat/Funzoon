@@ -1,0 +1,296 @@
+<!-- Breadcrumb -->
+<!-- <app-breadcrumb></app-breadcrumb> -->
+
+<!-- Details -->
+<div class="background-bg">
+  <div class="container pt-5">
+    <div class="card border-0 mb-4">
+      <div class="card-header pt-4 px-4">
+        <h4 class="pool-name">Porto Zemos</h4>
+        <a href="#" class="booking ml-2">Book Now</a>
+        <div class="pool-price">$45
+          <span class="d-block fs-14">per hour</span>
+        </div>
+        <p class="pool-address fs-12">
+          <i class="fa fa-map-marker fs-16"></i>
+          123 Smith Dr, Annapolis, MD
+        </p>
+        <div class="clear"></div>
+        <div class="pool-options fs-14">
+          <i class="fa fa-users pr-2 fs-16"></i>
+          <span class="fs-18 font-weight-bold">25</span> max guests
+        </div>
+        <div class="pool-favourite">
+          <a href="#"><i class="fa fa-share-alt px-2"></i></a>
+          <a href="#"><i class="fa fa-heart"></i></a>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="card-body p-0">
+        <div class="pool-width py-3">
+          <p class="mb-0 d-inline-block px-4">POOL DIMENSION
+            <span class="d-block text-white fs-18">33 * 17 ft</span>
+          </p>
+          <p class="mb-0 d-inline-block px-4">DEPTH OF POOL
+            <span class="d-block text-white fs-18">3.5 - 7.5 ft</span>
+          </p>
+        </div>
+        <div class="pools-views position-relative">
+          <ngx-slick-carousel class="carousel slider-for" #slickModal="slick-carousel" [config]="poolsView1">
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item5.jpg" alt="" class="img-fluid">
+            </div>
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item2.jpg" alt="" class="img-fluid">
+            </div>
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item6.jpg" alt="" class="img-fluid">
+            </div>
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item2.jpg" alt="" class="img-fluid">
+            </div>
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item6.jpg" alt="" class="img-fluid">
+            </div>
+          </ngx-slick-carousel>
+          <ngx-slick-carousel class="carousel p-2 slider-nav" #slickModal="slick-carousel" [config]="poolsView2">
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item5.jpg" alt="" class="img-fluid pr-2">
+            </div>
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item2.jpg" alt="" class="img-fluid pr-2">
+            </div>
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item6.jpg" alt="" class="img-fluid pr-2">
+            </div>
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item2.jpg" alt="" class="img-fluid pr-2">
+            </div>
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item6.jpg" alt="" class="img-fluid pr-2">
+            </div>
+            <div ngxSlickItem class="slide">
+              <img src="assets/images/item6.jpg" alt="" class="img-fluid pr-2">
+            </div>
+          </ngx-slick-carousel>
+        </div>
+      </div>
+    </div>
+    <!-- Description -->
+    <div class="card border-0 Description mb-4 p-3">
+      <div class="card-header pb-0">
+        <h4 class="mb-0">
+          <span>Description</span>
+          <img src="assets/images/underline.png" alt="" class="d-block mt-2">
+        </h4>
+      </div>
+      <div class="card-body py-0">
+        <p class="fs-14">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+           when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+           It has survived not only five centuries, but also the leap into electronic typesetting,
+           remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+           sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+           Aldus PageMaker including versions of Lorem Ipsum.</p>
+           <!-- Tabs -->
+           <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="guests-tab" data-toggle="tab" href="#guests" role="tab"
+              aria-controls="guests" aria-selected="true">Guests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="rules-tab" data-toggle="tab" href="#rules" role="tab"
+              aria-controls="rules" aria-selected="false">Rules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="privacy-tab" data-toggle="tab" href="#privacy" role="tab"
+               aria-controls="privacy" aria-selected="false">Privacy</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active p-3" id="guests" role="tabpanel" aria-labelledby="guests-tab">
+              <p>
+                <i class="fa fa-info-circle fs-20"></i>
+                This pool is pre approved for all reservations with up to 10 guests
+              </p>
+              <ul class="guests list-unstyled">
+                <li>
+                  <i class="fa fa-users"></i>
+                  Maximum guests <span>25</span>
+                </li>
+                <li>
+                  <i class="fa fa-user-plus"></i>
+                  <span>$5</span> per guest per hour after 5 guests
+                </li>
+                <li>
+                  <i class="fa fa-check-circle fs-20"></i>
+                  Children allowed
+                </li><li>
+                  <i class="fa fa-check-circle fs-20"></i>
+                  Infants allowed
+                </li>
+              </ul>
+            </div>
+            <div class="tab-pane fade p-3" id="rules" role="tabpanel" aria-labelledby="rules-tab">
+              <h5>Host Rules</h5>
+              <ul class="rules list-unstyled">
+                <li>
+                  <i class="fa fa-times-circle"></i>
+                  No Pets
+                </li>
+              </ul>
+              <h5>
+                <i class="fa fa-info-circle"></i>
+                Additional Rules
+              </h5>
+              <p>Hosts have no responsibilities regarding pool safety. Every guest
+                or parents are responsible for their own and family safety while using
+                the pool, regardless of their age. Please throw your trash in the
+                trash pin provided at the pool area.
+              </p>
+            </div>
+            <div class="tab-pane fade p-3" id="privacy" role="tabpanel" aria-labelledby="privacy-tab">
+              <h5>Privacy</h5>
+              <p>The pool area is visible from home and neighbors</p>
+              <h5>RestRoom</h5>
+              <p>The restroom/change room is located inside the house. You will have
+                access to the restroom/change room with full privacy and seperate access.
+              </p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Amenities -->
+    <div class="card border-0 mb-4 p-3">
+      <div class="card-header bp-0">
+        <h4 class="mb-0">
+          <span>Amenities</span>
+          <img src="assets/images/underline.png" alt="" class="d-block mt-2">
+        </h4>
+      </div>
+      <div class="card-body py-0">
+        <ul class="amenities-list list-unstyled">
+          <li>
+            <i class="fa fa-check"></i>
+            Bathroom
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            BBQ Gril
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Changing Room
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Great for Laps
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Heated Pool
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Large Shallow Area
+          </li><li>
+            <i class="fa fa-check"></i>
+            Lounge Chairs
+          </li><li>
+            <i class="fa fa-check"></i>
+            Night Lighting
+          </li><li>
+            <i class="fa fa-check"></i>
+            Pool Toys
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Agent -->
+    <div class="card border-0 mb-4 p-3">
+      <div class="card-header bp-0">
+        <h4 class="mb-0">
+          <span>Agent</span>
+          <img src="assets/images/underline.png" alt="" class="d-block mt-2">
+        </h4>
+      </div>
+      <div class="card-body py-0">
+        <div class="agent position-relative media">
+          <a href="#" class="agent-img">
+            <img src="assets/images/agent.jpg" class="" alt="" width="150" height="150">
+          </a>
+          <div class="media-body px-3">
+            <h4 class="fs-20 font-weight-bold d-inline-block">John Doe</h4>
+            <!-- <a class="agent-details" href="#">Agent Details</a> -->
+            <!-- <p>
+              <i class="fa fa-envelope"></i>
+              jdoe@homely.com
+            </p>
+            <p>
+              <i class="fa fa-phone"></i>
+              (123) 456-6789
+            </p> -->
+            <p>
+              <i class="fa fa-address-card fs-18"></i>
+              <span>Bio</span>
+            </p>
+            <p>
+              <i class="fa fa-info-circle fs-18"></i>
+              <span>Always communicate through Funzoon</span>
+              <span class="d-block py-1">To protect your payment, never transfer mony or communicate outside funzoon website or app.</span>
+            </p>
+            <!-- <div class="social-media">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Reviews -->
+    <div class="card border-0 mb-4 p-3">
+      <div class="card-header bp-0">
+        <h4 class="mb-0">
+          <span>Reviews</span>
+          <span>(20)</span>
+          <img src="assets/images/underline.png" alt="" class="d-block mt-2">
+        </h4>
+      </div>
+      <div class="card-body py-0">
+        <div class="review media mb-3">
+          <img src="assets/images/agent.jpg" alt="" width="100" height="100">
+          <div class="media-body px-3">
+            <h5 class="mb-0">Glory I.</h5>
+            <p class="mb-0">January 2021</p>
+            <p class="mb-0">
+              <i class="fa fa-star"></i>
+              5
+            </p>
+            <p>Hazem has a really wonderful host. His response time is a 10/10. Replied to my
+              inqueries quickly on and off the property. The place is really spacious and clean. My friends and
+              I had a wonderful time and will definitely be booking again.
+            </p>
+          </div>
+        </div>
+        <div class="review media mb-3">
+          <img src="assets/images/agent.jpg" alt="" width="100" height="100">
+          <div class="media-body px-3">
+            <h5 class="mb-0">Glory I.</h5>
+            <p class="mb-0">January 2021</p>
+            <p class="mb-0">
+              <i class="fa fa-star"></i>
+              5
+            </p>
+            <p>Hazem has a really wonderful host. His response time is a 10/10. Replied to my
+              inqueries quickly on and off the property. The place is really spacious and clean. My friends and
+              I had a wonderful time and will definitely be booking again.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

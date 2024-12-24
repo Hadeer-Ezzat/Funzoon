@@ -1,0 +1,220 @@
+@import 'src/styles.scss';
+
+.top-header {
+  background-color: $primary-color;
+  height: 50px;
+
+  .social-media {
+    a {
+      transition: 0.4s linear;
+      position: relative;
+      font-size: 20px;
+      line-height: 50px;
+      display: block;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: 0.4s linear;
+      }
+
+      &:hover {
+        transform: scale(0.8);
+
+        i {
+          color: #fff;
+        }
+      }
+
+      &:hover::before {
+        border-left: 2px solid #fff;
+        border-right: 2px solid #fff;
+        transform: skewX(-20deg);
+        border-radius: 50%;
+      }
+
+      &:hover::after {
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: skewX(30deg);
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.navbar {
+  background-color: #ebf1f5;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+  .menu-links {
+    .nav-item.active {
+      background-color: $primary-color;
+    }
+
+    .nav-item {
+      &:hover {
+        background-color: $primary-color;
+      }
+
+      &:hover .nav-link {
+        color: #fff;
+      }
+
+      &:hover i {
+        color: #fff;
+      }
+    }
+
+    .nav-link {
+      color: $black-text;
+    }
+  }
+
+  .nav-flex-icons {
+    .nav-item {
+      border: 1px solid transparent;
+      background-color: #fff;
+      border-radius: 6px;
+      position: relative;
+      cursor: pointer;
+
+      .nav-link {
+        color: $primary-color;
+
+        &::before,
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 2px solid #fff;
+          border-radius: 6px;
+          content: '';
+          display: block;
+          -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+          -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+          transition: transform 0.3s, opacity 0.3s;
+        }
+
+        &:hover::before {
+          opacity: 0;
+          -webkit-transform: translateY(0px) translateX(0px);
+          -moz-transform: translateY(0px) translateX(0px);
+          transform: translateY(0px) translateX(0px);
+        }
+
+        &::after {
+          border-color: $primary-color;
+          opacity: 0;
+          -webkit-transform: translateY(-7px) translateX(6px);
+          -moz-transform: translateY(-7px) translateX(6px);
+          transform: translateY(-7px) translateX(6px);
+        }
+
+        &:hover::after {
+          opacity: 1;
+          -webkit-transform: translateY(0px) translateX(0px);
+          -moz-transform: translateY(0px) translateX(0px);
+          transform: translateY(0px) translateX(0px);
+        }
+      }
+    }
+  }
+
+  .navbar-toggler {
+
+    span {
+      background-image: none;
+      color: $primary-color;
+      font-size: 22px;
+    }
+  }
+
+  .avatar {
+    vertical-align: middle;
+    border-radius: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  .dropdown-menu {
+    top: 60px;
+    min-width: 12rem;
+
+    .dropdown-item {
+      i {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar-nav {
+    .nav-item {
+      padding: 10px 15px !important;
+
+      i {
+        font-size: 18px;
+        padding: 0px 10px;
+      }
+    }
+
+  }
+
+  .nav-flex-icons {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding-left: 24px;
+  }
+}
+
+@media (max-width: 678px) {
+  .contact-info {
+    font-size: 12px;
+  }
+
+  .social-media {
+    a {
+      width: auto !important;
+      line-height: 25px !important;
+      height: auto !important;
+      font-size: 15px !important;
+    }
+  }
+
+  .navbar {
+    padding: 8px 0 !important;
+
+    .navbar-nav {
+      .nav-item {
+        padding: 10px 15px !important;
+
+        i {
+          font-size: 18px;
+          padding: 0px 10px;
+        }
+      }
+
+    }
+  }
+
+  .nav-flex-icons {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding-left: 24px;
+  }
+}

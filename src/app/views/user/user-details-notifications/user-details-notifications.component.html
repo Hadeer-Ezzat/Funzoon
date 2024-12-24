@@ -1,0 +1,32 @@
+<form [formGroup]="formGroup" class="notification-form">
+    <h5> <i class="fa fa-bell"></i> Notifications</h5>
+
+    <div class="w-50">
+        <p class="d-inline-block"> <i class="fa fa-comment icon"></i> SMS Messages </p>
+        <div class="float-right position-relative">
+            <input type="checkbox" formControlName='isSendSMS' id="isSendSMS-toggle-button-checkbox">
+            <label class="toggle-button-switch" for="isSendSMS-toggle-button-checkbox"></label>
+            <div class="toggle-button-text"></div>
+        </div>
+    </div>
+
+    <div class="w-50">
+        <p class="d-inline-block"> <i class="fa fa-envelope icon"></i> Email Notifications </p>
+        <div class="float-right position-relative">
+            <input type="checkbox" formControlName='isEmailNotification' id="isEmailNotification-toggle-button-checkbox">
+            <label class="toggle-button-switch" for="isEmailNotification-toggle-button-checkbox"></label>
+            <div class="toggle-button-text"></div>
+        </div>
+    </div>
+
+    <div class="w-50">
+        <p class="d-inline-block"> <i class="fa fa-bell icon"></i> Push Notifications </p>
+        <div class="float-right position-relative">
+            <input type="checkbox" formControlName='isPushNotification' id="isPushNotification-toggle-button-checkbox">
+            <label class="toggle-button-switch" for="isPushNotification-toggle-button-checkbox"></label>
+            <div class="toggle-button-text"></div>
+        </div>
+    </div>
+    
+    <!-- <button class="save-btn" type="submit">Save</button> -->
+  </form>

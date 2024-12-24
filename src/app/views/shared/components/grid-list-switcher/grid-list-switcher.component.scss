@@ -1,0 +1,13 @@
+@import 'src/styles.scss';
+
+.pools-view {
+
+  .active-view {
+    color: $primary-color;
+  }
+
+  i {
+    color: #717171;
+    font-size: 30px;
+  }
+}

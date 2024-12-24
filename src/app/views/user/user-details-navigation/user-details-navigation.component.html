@@ -1,0 +1,58 @@
+<div class="col-12">
+    <div class="card profile">
+      <div class="card-header">
+
+
+        <!-- <a href="#" class="avatar">
+          <img src='assets/images/agent.jpg' class="img-fluid" alt="">
+        </a>
+        <input #file type="file" accept='image/*' (change)="preview(file.files)" class="d-none"/> -->
+
+        <div class="attachements">
+          <label class="hoverable" for="fileInput">
+            <img [src]="url ? url : 'assets/images/agent.jpg'"> 
+            <div class="hover-text"><i class="fa fa-camera"></i></div>
+            <div class="background"></div>
+          </label>
+          <input id="fileInput" type='file' (change)="onSelectFile($event)">
+        </div>
+
+
+        <h5 class="mb-0">{{userProfileInfo.publicInformation.firstName}} {{userProfileInfo.publicInformation.lastName}}</h5>
+        <p class="fs-14">
+          <i class="fa fa-envelope"></i>
+          {{userProfileInfo.privateInformation.email}}
+        </p>
+      </div>
+      <div class="card-body text-center position-relative p-0">
+        <img src="assets/images/hexagon.png" class="arrow" alt="">
+        <div class="nav flex-column nav-pills profile-list" id="v-pills-tab" role="tablist"
+        aria-orientation="vertical">
+          <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+          role="tab" aria-controls="v-pills-home" aria-selected="true">
+          <i class="fa fa-user mr-2"></i>
+          Profile</a>
+          <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+          role="tab" aria-controls="v-pills-profile" aria-selected="false">
+          <i class="fa fa-credit-card mr-2"></i>
+          Payments</a>
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
+          role="tab" aria-controls="v-pills-messages" aria-selected="false">
+          <i class="fa fa-heart mr-2"></i>
+          Favorites</a>
+          <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+          role="tab" aria-controls="v-pills-settings" aria-selected="false">
+          <i class="fa fa-bell mr-2"></i>
+          Notifications</a>
+          <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+          role="tab" aria-controls="v-pills-settings" aria-selected="false">
+          <i class="fa fa-gift mr-2"></i>
+          Earn free swims</a>
+          <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+          role="tab" aria-controls="v-pills-settings" aria-selected="false">
+          <i class="fa fa-swimmer mr-2"></i>
+          List my pool</a>
+        </div>
+      </div>
+    </div>
+  </div>

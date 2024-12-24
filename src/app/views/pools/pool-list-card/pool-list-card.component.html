@@ -1,0 +1,34 @@
+<div class="row mx-0 mt-3 list-card">
+  <div class="col-lg-4 col-md-6 col-12 px-0">
+    <img [src]="pool.coverImg" alt="" class="img-fluid position-relative">
+    <div class="overlay"></div>
+    <p class="price">${{pool.chargePrice}}/hour</p>
+    <a href="#" class="like">Approved</a>
+  </div>
+  <div class="col-lg-8 col-md-6 col-12 item border-0 p-0 card">
+    <div class="card-header pt-4">
+      <h4 class="">{{pool.nameEn}}</h4>
+    </div>
+    <div class="card-body">
+      <span class="address d-block fs-14"><i class="fa fa-map-marker"></i>{{pool.address}}</span>
+        <span class="width d-block fs-14 py-2">{{pool.distance}} kilometres</span>
+      <p class="details">{{pool.descriptionEn}}</p>
+    </div>
+    <div class="card-footer">
+      <div class="btns">
+        <button (click)='navigateToMyPoolsMoreDetails(pool.id)' type="button" class="btn">
+          <span>More Details</span>
+          <i class="fa fa-file"></i>
+        </button>
+        <button type="button" class="btn">
+          <span>Edit</span>
+          <i class="fa fa-edit"></i>
+        </button>
+        <button type="button" class="btn">
+          <span>Delete</span>
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

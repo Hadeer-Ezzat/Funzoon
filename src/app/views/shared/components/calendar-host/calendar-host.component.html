@@ -1,0 +1,50 @@
+<app-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+</app-calendar-header>
+
+<div class="alert alert-info">
+  Click on a day or time slot on the view.
+  <strong *ngIf="clickedDate"
+    >You clicked on this time: {{ clickedDate | date:'medium' }}</strong
+  >
+  <strong *ngIf="clickedColumn != null"
+    >You clicked on this column: {{ clickedColumn }}</strong
+  >
+</div>
+
+<div [ngSwitch]="view">
+  <mwl-calendar-month-view
+    *ngSwitchCase="'month'"
+    [viewDate]="viewDate"
+    [events]="events"
+    (columnHeaderClicked)="clickedColumn = $event.isoDayNumber"
+    (dayClicked)="clickedDate = $event.day.date"
+    [refresh]="refresh"
+  >
+  >
+  </mwl-calendar-month-view>
+  <mwl-calendar-week-view
+    *ngSwitchCase="'week'"
+    [viewDate]="viewDate"
+    [events]="events"
+    (dayHeaderClicked)="clickedDate = $event.day.date"
+    [dayStartHour]="9"
+    [dayEndHour]="13"
+    [hourSegments] = '1'
+    (hourSegmentClicked)='hourSegmentSelected($event)'
+    (eventClicked)="eventClicked($event)"
+    [refresh]="refresh"
+  >
+  </mwl-calendar-week-view>
+  <mwl-calendar-day-view
+    *ngSwitchCase="'day'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [dayStartHour]="9"
+    [dayEndHour]="13"
+    [hourSegments] = '1'
+    (hourSegmentClicked)='hourSegmentSelected($event)'
+    [refresh]="refresh"
+  >
+  >
+  </mwl-calendar-day-view>
+</div>

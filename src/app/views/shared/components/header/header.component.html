@@ -1,0 +1,104 @@
+<!-- Top Header -->
+<div class="container-fluid top-header d-flex align-items-center justify-content-between">
+  <div class="row mx-0 align-items-center w-100">
+    <div class="contact-info font-italic fs-15">
+      <div class="text-white d-inline-block">
+        <i class="fa fa-phone pr-2"></i>
+        <span>+2 123 456 7890</span>
+      </div>
+      <div class="text-white d-inline-block px-2">
+        <i class="fa fa-envelope pr-2"></i>
+        <span>info@funzoon.com</span>
+      </div>
+    </div>
+    <div class="social-media ml-auto d-flex">
+      <a href="#" class="text-white"><i class="fa fa-facebook px-2"></i></a>
+      <a href="#" class="text-white"><i class="fa fa-twitter px-2"></i></a>
+      <a href="#" class="text-white"><i class="fa fa-instagram px-2"></i></a>
+    </div>
+  </div>
+</div>
+
+<!--Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark px-0 py-0">
+  <!-- Logo -->
+  <a class="navbar-brand ml-3" href="#">
+    <img src="assets/images/funzoon1.png" alt="" width="100">
+  </a>
+  <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fa fa-bars"></span>
+  </button>
+  <div class="collapse navbar-collapse mr-lg-3 mr-0" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mx-auto menu-links">
+      <li class="nav-item active py-1 px-4">
+        <a class="nav-link" routerLink='/'>
+          <i class="icon-homepage d-lg-block text-center pb-2 fs-24"></i>
+          <span class="fs-15 font-italic">HOME</span>
+        </a>
+      </li>
+      <li *ngIf='isUserLoggedIn' class="nav-item py-1 px-4">
+        <a class="nav-link" routerLink="#">
+          <i class="icon-resrevations d-lg-block text-center pb-2 fs-24"></i>
+          <span class="fs-15 font-italic">RESERVATIONS</span>
+        </a>
+      </li>
+      <li *ngIf='isUserLoggedIn' class="nav-item py-1 px-4">
+        <a class="nav-link" routerLink='/pools/my-pools' >
+          <i class="icon-my-pools d-lg-block text-center pb-2 fs-24"></i>
+          <span class="fs-15 font-italic">MY POOLS</span>
+        </a>
+      </li>
+      <!-- <li class="nav-item py-1 px-4">
+        <a class="nav-link" routerLink="#">
+          <i class="icon-joyspaces d-lg-block text-center pb-2 fs-24"></i>
+          <span class="fs-15 font-italic">JOYSPACES</span>
+        </a>
+      </li> -->
+      <!-- <li *ngIf='isUserLoggedIn' class="nav-item py-1 px-4">
+        <a class="nav-link" routerLink="/user/profile">
+          <i class="icon-user-profile d-lg-block text-center pb-2 fs-24 font-weight-bold"></i>
+          <span class="fs-15 font-italic">PROFILE</span>
+        </a>
+      </li> -->
+      <li class="nav-item py-1 px-4">
+        <a class="nav-link" routerLink="#">
+          <i class="icon-contact d-lg-block text-center pb-2 fs-24"></i>
+          <span class="fs-15 font-italic">CONTACT US</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul *ngIf='!isUserLoggedIn' class="navbar-nav ml-auto nav-flex-icons pr-2">
+      <li class="nav-item py-2 px-3">
+        <a class="nav-link p-0" (click)='redirectToLogin()'>
+          <i class="icon-login pr-2"></i>
+          <span>Login</span>
+        </a>
+      </li>
+    </ul>
+
+    <div *ngIf='isUserLoggedIn'>
+      <!-- {{currentUserService.user.userName}} -->
+      <!-- Basic dropdown -->
+      <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <!-- <i class="fa fa-user-circle"></i> -->
+        <img src="assets/images/agent.jpg" alt="Avatar" class="avatar" width="40" height="40">
+      </button>
+      <div class="dropdown-menu dropdown-menu-right">
+        <div class="text-center px-4">
+          <img src="assets/images/agent.jpg" alt="Avatar" class="avatar mb-2" width="60" height="60">
+          <h6 class="mb-0">{{currentUserService.user.userName}}</h6>
+          <p class="fs-14 text-muted">{{currentUserService.user.email}}</p>
+        </div>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item px-2" (click)='redirectToProfile()'><i class="fa fa-user pr-2"></i>Profile</a>
+        <a class="dropdown-item px-2" (click)='logout()'><i class="icon-login pr-2"></i>Logout</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+<!--/.Navbar -->
+

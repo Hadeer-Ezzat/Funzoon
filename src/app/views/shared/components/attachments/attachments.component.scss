@@ -1,0 +1,85 @@
+@import 'src/styles.scss';
+
+.attachements {
+
+  #upload-img {
+    max-width: 340px;
+    margin-top: -58%;
+    border-radius: 6px;
+    position: relative;
+  }
+
+  .delete-img {
+    position: absolute;
+    top: 14%;
+    right: 6px;
+    border-radius: 50%;
+    padding: 4px 5px;
+    background-color: $secondary-color;
+    color: #fff;
+    font-size: 18px;
+    display: none;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .image-upload {
+    &::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+
+    &::before {
+      content: "Upload your cover photo";
+      color: $primary-color;
+      font-size: 20px;
+      font-weight: bold;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      height: 35vh;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+
+  .cover-img {
+    top: 32px;
+    left: 0;
+    height: 35vh;
+  }
+
+  .additional-upload {
+
+    color: $yellow-color;
+    border: 1px solid $yellow-color;
+    font-weight: bold;
+    font-size: 35px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    // &::before {
+    //   content: "+";
+    // }
+  }
+
+  p {
+    color: #656565;
+  }
+}
+
+.booking {
+  .list-group-item {
+    background-color: transparent;
+  }
+
+  .num {
+    background: $primary-color;
+    color: #fff;
+    border-radius: 50%;
+    padding: 6px 15px;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}

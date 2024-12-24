@@ -1,0 +1,78 @@
+<form [formGroup]="formGroup">
+
+  <div class="row mx-0 attachements">
+
+    <div class="col-12 mb-3">
+      <h4 class="mb-0 wizard-step-title">Attachements</h4>
+      <img src="assets/images/underline.png" alt="" class="">
+    </div>
+
+    <!-- attachements -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <h6>Pool Images</h6>
+      <label class="fs-14">Upload images:</label>
+      <p class="fs-12">Showcase your best pool photos, this maybe the most important listing. Make sure to capture the pool and any surrounding space that will have access to.We recommend uploading a minimum of 3-6 landscape pictures.</p>
+
+      <div class="form-group position-relative mb-0">
+        <label for="" class="fs-14">Cover photo upload:</label>
+        <label for="image-upload" class="image-upload w-100 h-100"></label>
+        <img src="" id="upload-img" alt="">
+        <i class="fa fa-close delete-img"></i>
+        <!-- <input type="file" id="image-upload" class="d-none" onchange="readURL(this);"> -->
+        <input formControlName="coverImage" id="image-upload" #file type="file" accept='image/*'
+        (change)="preview(file.files)" class="d-none"/>
+        <img [src]="imgURL" class="w-100 position-absolute cover-img" *ngIf="imgURL">
+      </div>
+
+      <!-- Validation -->
+      <app-form-control-error *ngIf="submitted && !imgURL" [errorType]="errorType.MustSelectPoolCoverImage"></app-form-control-error>
+
+      <app-file-uploader-with-table-control (uploadertEmitter)='updateUploader($event)'></app-file-uploader-with-table-control>
+
+      <!-- Validation -->
+      <app-form-control-error *ngIf="submitted && !isUploadedMinRequiredPoolImages()" [errorType]="errorType.MustUploadPoolImages"></app-form-control-error>
+
+    </div>
+
+    <!-- Availability -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <h6>Availability</h6>
+      <p class="fs-12">Automatically manage your calendar and which reservations you get.</p>
+
+      <div class="form-group">
+        <label for="" class="fs-14">Advance Notice:</label>
+        <p class="fs-12">how much notice do you need before a guest arrives?</p>
+        <input type="text" class="form-control fs-12" formControlName='advanceNotice' placeholder="1 hour in advance">
+
+        <!-- Validation -->
+        <app-form-control-error *ngIf="submitted && form.advanceNotice.errors && form.advanceNotice.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="fs-14">Availability Window:</label>
+        <p class="fs-12">Choose how far in advance guests can book your place.</p>
+        <input type="text" class="form-control fs-12" formControlName='availabilityWindow' placeholder="3 months">
+
+        <!-- Validation -->
+        <app-form-control-error *ngIf="submitted && form.availabilityWindow.errors && form.availabilityWindow.errors.required" [errorType]="errorType.RequiredField"></app-form-control-error>
+      </div>
+    </div>
+
+    <!-- How guests book? -->
+    <div class="col-lg-4 col-md-6 col-12 booking">
+      <h6>How guests book?</h6>
+      <p class="fs-13">Qualified groups with less than 10 guests can book available days without sending a reservation request. </p>
+      <ul class="list-group">
+        <li *ngFor='let step of bookingSteps' class="list-group-item d-flex align-items-start border-0 p-0">
+          <div class="num">{{step.stepNumber}}</div>
+          <div class="fs-12">
+            <span class="font-weight-bold">{{step.name}}</span>
+            <p>{{step.description}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</form>
